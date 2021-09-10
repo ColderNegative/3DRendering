@@ -1,5 +1,7 @@
-import java.awt.*;
+package Rendering;
 
+import VectorMaths.*;
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 

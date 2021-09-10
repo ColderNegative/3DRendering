@@ -1,5 +1,7 @@
-import java.awt.*;
+package Rendering;
 
+import VectorMaths.*;
+import java.awt.*;
 import javax.swing.*;
 
 public class MyFrame extends JFrame{
