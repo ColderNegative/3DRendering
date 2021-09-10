@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Matrix {
 	public static void main(String[] args) {
+		// all within main method is only called when this file is specifically ran and not when the module is called
 		// display current working module
 		System.out.println("Module: Matrix");
 		
