@@ -6,6 +6,7 @@ import java.lang.Math;
 public class VectorObjects {
 	
 	public static void main(String[] args) {
+		// all within main method is only called when this file is specifically ran and not when the module is called
 		// displays current working module
 		System.out.println("Module: Vector Objects");
 		
