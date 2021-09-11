@@ -9,3 +9,6 @@
 - the object arrays will then be put through the matrix file where rotation and projection will be solved 
 - the data will then be converted to an array of 2d points 
 - another array will indicate the connections for the faces which are triangles 
+
+## update 2: 11 September 
+- all object files can be placed in a folder which will be indexed by the getObjFiles method
