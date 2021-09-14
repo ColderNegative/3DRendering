@@ -13,3 +13,6 @@
 ## update 2: 11 September 
 - all object files can be placed in a folder which will be indexed by the getObjFiles method
 - getfilemeta method pulls the number of faces, vertecies, normals, and textures from the file
+
+## update 3: 13 September
+- Create method for extracting each component from the object file such as vertecies and the faces
