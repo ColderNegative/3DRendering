@@ -8,17 +8,15 @@ import java.util.Scanner;
 
 // main importing class
 public class ObjImport {
-    // folder from where the objects will pulled from 
-    private static String objFolder = "Objects\\";
     public static void main(String[] args) {
 
         // print module name to terminal
-        System.out.println("Module: Obj file importing and parsing");
+        System.out.println("Module: Obj file importing");
 
     }
 
     // Pulls all file contents and appends each line to a list
-    static String[] fileContents(String filename) {
+    public static String[] fileContents(String filename) {
         try {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);
@@ -43,7 +41,7 @@ public class ObjImport {
     }
 
     // pulls the meta data from the file (vertcies, lines, textures, faces, normals)
-    static int[] getFileMeta(String fileName) {
+    public static int[] getFileMeta(String fileName) {
          try {
             File myObj = new File(fileName);
             Scanner myReader = new Scanner(myObj);
@@ -88,9 +86,13 @@ public class ObjImport {
     }
 
     // pulls a list of the file paths in the objects folder 
-    static File[] getObjFiles(String folderName) {
-        File directory = new File(folderName);
-        File[] contents = directory.listFiles();
+    public static String[] getObjFiles(String folderName) {
+        File directory = new File(folderName + "\\");
+        File[] contentsFile = directory.listFiles();
+        String[] contents = new String[contentsFile.length];
+        for (int i = 0; i < contentsFile.length; i++) {
+           contents[i] = contentsFile[i].toString(); 
+        }
         return contents;
     }
 
