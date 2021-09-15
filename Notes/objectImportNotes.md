@@ -16,3 +16,8 @@
 
 ## update 3: 13 September
 - Create method for extracting each component from the object file such as vertecies and the faces
+
+## upadate 4: 15 Swptember
+- comparing to strings requires the .equals() method to be called and cannot be compared with == operator
+- primitives can use operators but reference types require methods (took me 30 mins to discover)
+- reference types have a unique id which will never be the same hence why they can never be compared with an operator 
