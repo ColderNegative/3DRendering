@@ -21,3 +21,7 @@
 - comparing to strings requires the .equals() method to be called and cannot be compared with == operator
 - primitives can use operators but reference types require methods (took me 30 mins to discover)
 - reference types have a unique id which will never be the same hence why they can never be compared with an operator 
+
+## update 5: 16 September
+- completed get vertecies method for obj parsing file 
+- working on replicating the method for vertex normals, and textures        
