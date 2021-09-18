@@ -10,7 +10,8 @@ public class ObjParse {
 
         String[] files = ObjImport.getObjFiles("Objects");
         String[] filesContents = ObjImport.fileContents(files[0]);
-        int numvertnormal = ObjImport.getFileMeta(files[0])[2];
+        int numFaces = ObjImport.getFileMeta(files[0])[3];
+        ObjParse.getFaces(filesContents, numFaces);
 
     }
 
@@ -117,27 +118,27 @@ public class ObjParse {
         return vertArrayNormal;
     }
 
-    public static double[][] getFaces(String[] fileContents, int vertciesNormals) {
+    public static String[][] getFaces(String[] fileContents, int vertciesNormals) {
 
-        double[][] vertArrayNormal = new double[vertciesNormals][3];
+        String[][] facesArray = new String[vertciesNormals][3];
         int o = 0;
 
         for (int i = 0; i < fileContents.length; i++) {
             String line = fileContents[i];
             if (line.length() > 1 ) {
                 String firstTwoChar = "" + line.charAt(0) + line.charAt(1);
-                if (firstTwoChar.equals("vn")) {
+                if (firstTwoChar.equals("f ")) {
                     String coord = "";
                     int u = 0;
-                    for (int j = 3; j < line.length(); j++) {
+                    for (int j = 2; j < line.length(); j++) {
                         coord += line.charAt(j);
                         if (line.charAt(j) == ' ') {
-                            vertArrayNormal[o][u] = Double.parseDouble(coord);
+                            facesArray[o][u] = coord;
                             coord = "";
                             u++;
                         }
                         if (j == line.length() - 1) {
-                            vertArrayNormal[o][2] = Double.parseDouble(coord);
+                            facesArray[o][2] = coord;
                             coord = "";
                             o++;
                         }
@@ -148,7 +149,15 @@ public class ObjParse {
             }        
         }
 
-        return vertArrayNormal;
+        for (int i = 0; i < facesArray.length; i++) {
+            for (int j = 0; j < facesArray[0].length; j++) {
+                for (int k = 0; k < )
+                
+            }
+        }
+        System.out.println(Arrays.deepToString(facesArray));
+
+        return facesArray;
     }
     
 }
