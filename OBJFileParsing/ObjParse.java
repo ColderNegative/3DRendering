@@ -1,17 +1,10 @@
 package OBJFileParsing;
 
-import java.util.Arrays;
-
 public class ObjParse {
     public static void main(String[] args) {
         
         // print module name to terminal
         System.out.println("Module: Obj file parsing");
-
-        String[] files = ObjImport.getObjFiles("Objects");
-        String[] filesContents = ObjImport.fileContents(files[0]);
-        int numFaces = ObjImport.getFileMeta(files[0])[3];
-        ObjParse.getFaces(filesContents, numFaces);
 
     }
 
@@ -118,9 +111,9 @@ public class ObjParse {
         return vertArrayNormal;
     }
 
-    public static String[][] getFaces(String[] fileContents, int vertciesNormals) {
+    public static double[][][] getFaces(String[] fileContents, int numFaces) {
 
-        String[][] facesArray = new String[vertciesNormals][3];
+        String[][] facesArray = new String[numFaces][3];
         int o = 0;
 
         for (int i = 0; i < fileContents.length; i++) {
@@ -131,33 +124,46 @@ public class ObjParse {
                     String coord = "";
                     int u = 0;
                     for (int j = 2; j < line.length(); j++) {
-                        coord += line.charAt(j);
                         if (line.charAt(j) == ' ') {
                             facesArray[o][u] = coord;
                             coord = "";
                             u++;
+                        } else {
+                            coord += line.charAt(j);
                         }
-                        if (j == line.length() - 1) {
+                        if (j == line.length()-1) {
                             facesArray[o][2] = coord;
                             coord = "";
                             o++;
                         }
-
+                        
                     }
                 } 
 
             }        
         }
 
+        double[][][] finalFacesArray = new double[numFaces][3][3];
+
         for (int i = 0; i < facesArray.length; i++) {
             for (int j = 0; j < facesArray[0].length; j++) {
-                for (int k = 0; k < )
+                String item = facesArray[i][j];
+                int slashes = 0;
+                for (int k = 0; k < item.length(); k++){
+                    char charAt = item.charAt(k);
+                    if (charAt == '/') {
+                        slashes++;
+
+                    } else {
+                        finalFacesArray[i][j][slashes] = (double) charAt - '0';
+
+                    }
+                }
                 
             }
         }
-        System.out.println(Arrays.deepToString(facesArray));
 
-        return facesArray;
+        return finalFacesArray;
     }
     
 }
