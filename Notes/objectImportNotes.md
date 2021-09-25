@@ -25,3 +25,10 @@
 ## update 5: 16 September
 - completed get vertecies method for obj parsing file 
 - working on replicating the method for vertex normals, and textures        
+
+## update 6: 17 September 
+- finalized obj parsing file
+- begun work on obj compile file
+- adding Obj class for creating objects with all the necessary atributes    
+- adding get obj method for calling those objects with their file names as opposed to index in a list
+- Method to create array of all objects in the objects folder (using the object class)
