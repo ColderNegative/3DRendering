@@ -1,6 +1,5 @@
 package OBJFileParsing;
 
-import java.util.Arrays;
 
 public class ObjParse {
     public static void main(String[] args) {

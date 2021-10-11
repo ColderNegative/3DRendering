@@ -16,7 +16,7 @@ public class ObjImport {
     }
 
     // Pulls all file contents and appends each line to a list
-    public static String[] fileContents(String filename) {
+    public static String[] getFileContents(String filename) {
         try {
             File myObj = new File(filename);
             Scanner myReader = new Scanner(myObj);

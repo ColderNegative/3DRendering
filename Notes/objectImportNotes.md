@@ -32,3 +32,23 @@
 - adding Obj class for creating objects with all the necessary atributes    
 - adding get obj method for calling those objects with their file names as opposed to index in a list
 - Method to create array of all objects in the objects folder (using the object class)
+
+## update 7: 1 October 
+- created and Object class
+- added basic contructure which takes in four attributes
+
+## update 8: 11 october
+- troubleshooted calling a method (had and incorrect folder name)
+- in createobjectarray method:
+    - first create arrays that pull objfile and create the final object array
+    - loop through each file in the string array 
+    - get metadata, data and filename
+    - store filename in variable
+    - create object from the class object  
+    - append to the list/array
+- completed the objparsing package
+- vector maths:
+    - rendered object class which will contain 3d array 
+    - the outer layer is the object after all the calculations
+    - the middle layer is each face
+    - the inner layer contains the vertices, normal, and texture of that face
