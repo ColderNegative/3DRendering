@@ -1,9 +1,9 @@
 package Rendering;
 
-import VectorMaths.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import Projection.*;
 
 public class MyPanel extends JPanel implements ActionListener{
 
