@@ -1,4 +1,4 @@
-package VectorMaths;
+package Projection;
 
 import java.util.Arrays;
 import java.lang.Math;
