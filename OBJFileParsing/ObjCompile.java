@@ -11,9 +11,9 @@ public class ObjCompile {
 
 
     // add obj object, add get obj method which allows the calling of objs with their names, 
-    public static Object[] createObjectArray(String folderName) {
+    public static Objects[] createObjectsArray(String folderName) {
         String[] objFiles = ObjImport.getObjFiles(folderName);
-        Object[] finalArray = new Object[objFiles.length];        
+        Objects[] finalArray = new Objects[objFiles.length];        
 
         for (int i = 0; i < finalArray.length; i++) {
 
@@ -29,8 +29,8 @@ public class ObjCompile {
             double[][] vertexNormals = ObjParse.getVertNormal(contents, meta[2]);
             double[][][] faces = ObjParse.getFaces(contents, meta[3]);
             
-            // create the object and append to Object[]
-            finalArray[i] = new Object(vertices, faces, vertexNormals, vertexTextures);
+            // create the object and append to Objects[]
+            finalArray[i] = new Objects(vertices, faces, vertexNormals, vertexTextures);
 
         }
 
@@ -40,18 +40,4 @@ public class ObjCompile {
 
 }
 
-class Object {
-    public double[][] verticies;
-    public double[][][] faces;
-    public double[][] normals;
-    public double[][] textures;
-
-    public Object(double[][] v, double[][][] f, double[][] n, double[][] t) {
-        verticies = v;
-        faces = f;
-        normals = n;
-        textures = t;
-    }
-    
-}
 

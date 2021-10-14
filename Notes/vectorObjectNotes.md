@@ -4,3 +4,5 @@
     - the outer layer is the object after all the calculations
     - the middle layer is each face
     - the inner layer contains the vertices, normal, and texture of that face
+
+## update 2: October 14
