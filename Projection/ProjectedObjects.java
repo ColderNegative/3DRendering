@@ -15,6 +15,9 @@ public class ProjectedObjects {
 
         //displays current working module
         System.out.println("Module: Project objects");
+
+        OBJFileParsing.Objects[] objectArry = OBJFileParsing.ObjCompile.createObjectsArray("Objects");
+        ProjectedObjects cube = new ProjectedObjects(objectArry[0]);
     }
 
     public ProjectedObjects(OBJFileParsing.Objects obj) {
@@ -48,7 +51,7 @@ public class ProjectedObjects {
     }
 
     public void project() {
-        
+        // TODO: pull in the object extract verticies  
 
     }
 
